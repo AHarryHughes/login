@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A Game</title>
+</head>
+<body>
+    <form method="post" action="/game">
+        <input type="text" name="guess" placeholder="guess">
+    </form>
+    <p>
+        {{#word_array}}
+            <span>{{.}}</span>
+        {{/word_array}}
+    </p>
+    <p>
+        {{#guess_word_array}}
+            <span>{{.}}</span>
+        {{/guess_word_array}}
+    </p>
+    <h1>the word is: {{word}}</h1>
+    <form method="get" action="/game_restart">
+            <button>Play Again</button>
+    </form>
+    <form method="post" action="/">
+            <button>Log Out  {{button_count}}</button>
+    </form>
+</body>
+</html>
